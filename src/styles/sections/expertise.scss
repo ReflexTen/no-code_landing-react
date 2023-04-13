@@ -1,0 +1,101 @@
+.expertise {
+  position: relative;
+  background-color: #fff;
+  // .expertise__subtitle
+  &__subtitle {
+    margin-bottom: 28px;
+  }
+  // .expertise__box
+  &__box {
+    display: flex;
+    justify-content: end;
+  }
+  // .expertise__img-wrapper
+  &__img-wrapper {
+    position: absolute;
+    top: 190px;
+    left: 14px;
+  }
+  // .expertise__img
+  &__img {
+  }
+  // .expertise__list
+  &__list {
+  }
+  // .expertise__item
+  &__item {
+    max-width: 574px;
+    width: 100%;
+    padding-bottom: 25px;
+    // padding-right: 50px;
+    padding-left: 92px;
+    border-bottom: 1px solid #23213d;
+
+    &:not(:last-child) {
+      margin-bottom: 25px;
+    }
+    &:nth-child(2) {
+      .expertise {
+        &__item-title {
+          &::before {
+            background-image: url('../../images/expertise/listicon-2.png');
+          }
+        }
+      }
+    }
+    &:nth-child(3) {
+      .expertise {
+        &__item-title {
+          &::before {
+            background-image: url('../../images/expertise/listicon-3.png');
+          }
+        }
+      }
+    }
+    &:nth-child(4) {
+      .expertise {
+        &__item-title {
+          &::before {
+            background-image: url('../../images/expertise/listicon-4.png');
+          }
+        }
+      }
+    }
+    &:nth-child(5) {
+      .expertise {
+        &__item-title {
+          &::before {
+            background-image: url('../../images/expertise/listicon-5.png');
+          }
+        }
+      }
+    }
+  }
+  // .expertise__item-title
+  &__item-title {
+    position: relative;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 1.095;
+    color: #23213d;
+
+    &::before {
+      content: '';
+      background-image: url('../../images/expertise/listicon-1.png');
+      position: absolute;
+      top: 0;
+      left: -85px;
+      width: 67px;
+      height: 68px;
+      object-fit: contain;
+    }
+  }
+  // .expertise__item-text
+  &__item-text {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.25;
+    color: rgba(35, 33, 61, 0.6);
+  }
+}

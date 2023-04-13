@@ -1,0 +1,222 @@
+.contact {
+  // .contact__subtitle
+  &__subtitle {
+    margin-bottom: 29px;
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 1.335;
+    text-align: center;
+    color: #ffffff;
+  }
+  // .contact__wrapper
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  // .contact__form
+  &__form {
+  }
+  // .contact__card
+  &__card {
+  }
+}
+.form {
+  max-width: 880px;
+  width: 100%;
+  padding: 44px 64px 34px;
+  background: rgba(0, 0, 0, 0.58);
+
+  border-radius: 26px;
+  // .form__interesting
+  &__interesting {
+  }
+  // .form__input-box
+  &__input-box {
+    display: flex;
+    gap: 23px;
+    margin-bottom: 16.5px;
+  }
+
+  &__input,
+  &__textarea {
+    width: 100%;
+    padding: 19px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid #ffffff;
+    border-radius: 8px;
+    color: white;
+
+    &::placeholder {
+      line-height: 135.5%;
+      color: #ffffff;
+    }
+  }
+  // .form__input
+  &__input {
+  }
+  // .form__textarea
+  &__textarea {
+    height: 125px;
+    margin-bottom: 24px;
+  }
+
+  &__checkbox {
+    margin-bottom: 20px;
+  }
+  // .form__label-checkbox
+  &__label-checkbox {
+    margin-left: 10px;
+
+    font-size: 20px;
+    line-height: 117.5%;
+    letter-spacing: 0.02em;
+  }
+  // .form__request-button
+  &__request-button {
+  }
+
+  & .request-button__link {
+    max-width: 340px;
+    padding: 24px;
+    text-align-last: left;
+
+    &::before {
+      top: 50%;
+      transform: translateY(-50%);
+      left: 263px;
+    }
+
+    &::after {
+      top: 16.15px;
+      left: 277.3px;
+    }
+  }
+}
+.interesting {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 28px;
+  // .interesting__text
+  &__text {
+    display: inline;
+    margin-right: 23px;
+    font-size: 20px;
+    line-height: 1.175;
+    letter-spacing: 0.02em;
+  }
+  // .interesting__list
+  &__list {
+    display: inline-block;
+    max-width: 564px;
+    width: 100%;
+    padding: 15.5px 17px 15.5px 21px;
+    background: #ffffff;
+    border: 1px solid #ffffff;
+    border-radius: 8px;
+  }
+  // .interesting__list-item
+  &__list-item {
+    font-size: 16px;
+    line-height: 135.5%;
+    color: #3a3737;
+  }
+
+  &__button {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
+.request-button {
+  // .request-button__link
+  &__link {
+  }
+}
+.card {
+  max-width: 348px;
+  width: 100%;
+  padding: 23px 35px 33px 35px;
+  background: rgba(0, 0, 0, 0.58);
+  border-radius: 26px;
+  // .card__circle
+  &__circle {
+    position: relative;
+    width: 277px;
+    height: 277px;
+    margin-bottom: 14px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  // .card__circle-img-box
+  &__circle-img-box {
+    position: absolute;
+    top: -5px;
+    width: 219px;
+    height: 248px;
+    background-image: url('../../images/contact/card-img.png');
+    background-size: cover;
+    border-radius: 50%;
+    z-index: 999;
+  }
+  // .card__circle-text
+  &__circle-text {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    background: linear-gradient(92.81deg, #ff1717 6.3%, #ff8988 97.86%);
+    -webkit-background-clip: text;
+    // -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    color: rgba($color: red, $alpha: 0.7);
+    font-size: 13px;
+    animation: animate 30s linear infinite;
+  }
+
+  p span {
+    position: absolute;
+    left: 50%;
+    font-size: 1.2em;
+    transform-origin: 0 138.5px;
+  }
+
+  // .card__title
+  &__title {
+    margin-bottom: 7px;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 109.5%;
+    text-align: center;
+  }
+  // .card__text
+  &__text {
+    margin-bottom: 19px;
+    line-height: 135.5%;
+    text-align: center;
+  }
+  // .card__request-button
+  &__request-button {
+  }
+
+  & .request-button__link {
+    max-width: 273px;
+    padding: 23.5px;
+    background: #0b96fe;
+
+    &::before {
+      top: 50%;
+      transform: translateY(-50%);
+      left: 198px;
+    }
+
+    &::after {
+      top: 16.15px;
+      left: 210.3px;
+    }
+  }
+}
