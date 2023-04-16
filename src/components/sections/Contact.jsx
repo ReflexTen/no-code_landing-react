@@ -12,6 +12,7 @@ const Contact = () => {
       )
       .join('')
   }, 0.01)
+
   return (
     <section className="contact section">
       <div className="container">

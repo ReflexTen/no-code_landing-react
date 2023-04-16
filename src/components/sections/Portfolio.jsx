@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import works from './../helpers/Works.js'
 
 const navigation = [
@@ -9,10 +9,14 @@ const navigation = [
   { name: 'Разработка' },
 ]
 
-const Portfolio = () => {
+const Portfolio = ({ contentButtonText }) => {
   const [categories, setCatecategories] = useState(0)
   const [sorting, setSorting] = useState('Все работы')
   const [collection, setCollection] = useState([])
+
+  const contentList = useRef()
+  const circleButton = useRef()
+  const shadowWrap = useRef()
 
   useEffect(() => {
     if (sorting === 'Все работы') {
@@ -21,6 +25,12 @@ const Portfolio = () => {
       setCollection([...works.filter(item => item.tag === sorting)])
     }
   }, [sorting])
+
+  function showList() {
+    contentList.current.classList.toggle('show')
+    circleButton.current.classList.toggle('active-button')
+    shadowWrap.current.classList.toggle('shadow-active')
+  }
 
   return (
     <section className="portfolio section">
@@ -47,7 +57,7 @@ const Portfolio = () => {
         </ul>
 
         <div className="portfolio__content content">
-          <ul className="content__list ">
+          <ul ref={contentList} className="content__list ">
             {collection.map((item, idx) => {
               return (
                 <li key={idx} className="content__item">
@@ -60,8 +70,20 @@ const Portfolio = () => {
               )
             })}
           </ul>
+
+          <div
+            ref={circleButton}
+            onClick={showList}
+            className="content__circle-button"
+          >
+            <div className="content__circle-text">
+              <p ref={contentButtonText}>- Показать больше - Показать больше</p>
+            </div>
+          </div>
         </div>
       </div>
+
+      <div ref={shadowWrap} className="shadow"></div>
     </section>
   )
 }
