@@ -31,7 +31,7 @@ const Home = () => {
             <br />
             <div className="home__title-elipse"></div>
             <span className="home__title-text">приложений</span> для успеха в
-            бизнесе! 
+            бизнесе!
           </h1>
         </Fade>
 
@@ -44,11 +44,11 @@ const Home = () => {
               Реализуем проекты любой сложности.
             </li>
             <li className="home__list-item">
-              Поддерживаем наших клиентов после запуска проекта 
+              Поддерживаем наших клиентов после запуска проекта
             </li>
           </ul>
 
-          <Fade right {...properties} distance={'300px'} duration={4000}>
+          <Fade right {...properties} distance={'300px'} duration={2000}>
             <div className="home__button-box">
               <a className="home__button" href="#">
                 <div className="home__button-text">
