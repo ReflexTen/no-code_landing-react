@@ -1,4 +1,5 @@
 import { useRef } from 'react'
+import Dropdown from '../../contact-components/Dropdown'
 
 const Contact = () => {
   const contactImgText = useRef()
@@ -24,16 +25,8 @@ const Contact = () => {
           <form className="contact__form form">
             <div className="form__interesting interesting">
               <p className="interesting__text">Мне интересно...</p>
-              <ul className="interesting__list">
-                <li className="interesting__list-item">Бесплатный брифинг</li>
-                {/* <li className="interesting__list-item">Бесплатный брифинг</li>
-                <li className="interesting__list-item">Бесплатный брифинг</li>
-                <li className="interesting__list-item">Бесплатный брифинг</li>
-                <li className="interesting__list-item">Бесплатный брифинг</li> */}
-              </ul>
-              <button className="interesting__button" type="button">
-                V
-              </button>
+
+              <Dropdown />
             </div>
 
             <div className="form__input-box">

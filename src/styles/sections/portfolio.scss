@@ -4,8 +4,6 @@
   flex-direction: column;
   justify-content: space-between;
   padding-bottom: 0;
-  // box-shadow: inset 50em 10em gold;
-
   // .portfolio__subtitle
   &__subtitle {
     margin-bottom: 50px;
@@ -51,24 +49,14 @@
 }
 
 .content {
-  // position: relative;
   // .content__list
   &__list {
-    // position: absolute;
-    // top: 0;
-    // left: 0;
-    // height: 100%;
-    // overflow: hidden;
-
-    max-height: 10%;
+    overflow: hidden;
+    max-height: 400px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 27px 15px;
-    transition: height 0.5s;
-
-    // &.show {
-    //   height: 100%;
-    // }
+    transition: all 0.9s;
   }
   // .content__item
   &__item {
@@ -114,7 +102,7 @@
       transition: all 0.5s;
     }
 
-    &.active-button {
+    &--active {
       &::after {
         transform: translateX(-50%) rotate(180deg);
       }
@@ -149,8 +137,8 @@
   box-shadow: 0 -50px 50px 20px #191733;
   transition: all 0.5s;
 
-  &.shadow-active {
-    margin-top: 50px;
+  &--active {
+    margin-top: 80px;
     opacity: 0;
   }
 }
