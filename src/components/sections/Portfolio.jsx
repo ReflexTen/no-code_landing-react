@@ -27,9 +27,19 @@ const Portfolio = ({ contentButtonText }) => {
   }, [sorting])
 
   function showList() {
-    contentList.current.classList.toggle('show')
-    circleButton.current.classList.toggle('active-button')
-    shadowWrap.current.classList.toggle('shadow-active')
+    circleButton.current.classList.toggle('content__circle-button--active')
+    shadowWrap.current.classList.toggle('shadow--active')
+
+    const contentListValue = contentList.current
+
+    if (contentListValue.dataset.open !== 'true') {
+      console.log('loh')
+      contentListValue.dataset.open = 'true'
+      contentListValue.style.maxHeight = `${contentListValue.scrollHeight}px`
+    } else {
+      contentListValue.dataset.open = 'false'
+      contentListValue.style.maxHeight = ``
+    }
   }
 
   return (
@@ -57,7 +67,7 @@ const Portfolio = ({ contentButtonText }) => {
         </ul>
 
         <div className="portfolio__content content">
-          <ul ref={contentList} className="content__list ">
+          <ul ref={contentList} className="content__list" data-open="false">
             {collection.map((item, idx) => {
               return (
                 <li key={idx} className="content__item">
