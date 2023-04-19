@@ -5,6 +5,7 @@ import Contact from './sections/Contact'
 import Expertise from './sections/Expertise'
 import Home from './sections/Home'
 import Portfolio from './sections/Portfolio'
+import Team from './sections/Team'
 
 const Main = () => {
   const contentButtonText = useRef()
@@ -25,6 +26,7 @@ const Main = () => {
       <Expertise />
       <Portfolio contentButtonText={contentButtonText} />
       <About />
+      <Team />
       <Contact />
     </main>
   )
