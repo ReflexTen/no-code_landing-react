@@ -33,13 +33,21 @@ const Portfolio = ({ contentButtonText }) => {
     const contentListValue = contentList.current
 
     if (contentListValue.dataset.open !== 'true') {
-      console.log('loh')
       contentListValue.dataset.open = 'true'
       contentListValue.style.maxHeight = `${contentListValue.scrollHeight}px`
     } else {
       contentListValue.dataset.open = 'false'
       contentListValue.style.maxHeight = ``
     }
+  }
+
+  function hideList() {
+    circleButton.current.classList.remove('content__circle-button--active')
+    shadowWrap.current.classList.remove('shadow--active')
+
+    const contentListValue = contentList.current
+    contentListValue.dataset.open = 'false'
+    contentListValue.style.maxHeight = ``
   }
 
   return (
@@ -55,6 +63,7 @@ const Portfolio = ({ contentButtonText }) => {
                 onClick={() => {
                   setSorting(item.name)
                   setCatecategories(idx)
+                  hideList()
                 }}
                 className={`portfolio__tag ${
                   categories === idx ? 'active' : ''
