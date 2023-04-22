@@ -26,7 +26,7 @@ const Contact = () => {
           `<span style="transform:rotate(${i * 11}deg")>${letter}</span>`
       )
       .join('')
-  }, 0.01)
+  }, 1)
 
   function activeList() {
     dropDown.current.children[0].classList.toggle('interesting__button--active')
