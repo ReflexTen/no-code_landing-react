@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
-import works from './../helpers/Works.js'
+import works from '../../components/helpers/Works.js'
 
 const navigation = [
   { name: 'Все работы' },
@@ -26,7 +26,7 @@ const Portfolio = ({ contentButtonText }) => {
     }
   }, [sorting])
 
-  function showList() {
+  const showList = () => {
     circleButton.current.classList.toggle('content__circle-button--active')
     shadowWrap.current.classList.toggle('shadow--active')
 
@@ -41,7 +41,7 @@ const Portfolio = ({ contentButtonText }) => {
     }
   }
 
-  function hideList() {
+  const hideList = () => {
     circleButton.current.classList.remove('content__circle-button--active')
     shadowWrap.current.classList.remove('shadow--active')
 
@@ -51,7 +51,7 @@ const Portfolio = ({ contentButtonText }) => {
   }
 
   return (
-    <section className="portfolio section">
+    <section className="portfolio section" id="portfolio">
       <div className="container">
         <h2 className="portfolio__subtitle subtitle">Портфолио</h2>
 

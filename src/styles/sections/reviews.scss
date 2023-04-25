@@ -1,0 +1,138 @@
+.reviews {
+  position: relative;
+  overflow: hidden;
+  background-color: #fff;
+  padding-bottom: 101px;
+  // .reviews__subtitle
+  &__subtitle {
+    margin-bottom: 54px;
+  }
+
+  &__swiper-container {
+    width: 810px;
+    margin-bottom: 60px;
+  }
+
+  &__shadow-right,
+  &__shadow-left {
+    position: absolute;
+    background-color: white;
+    height: 1000px;
+    width: 1px;
+    box-shadow: 0 0px 70px 60px white;
+    z-index: 999;
+  }
+
+  &__shadow-right {
+    top: 0;
+    right: 0;
+  }
+  &__shadow-left {
+    top: 0;
+    left: 0;
+  }
+
+  .slider-controler {
+    top: 115px;
+    left: 1335px;
+  }
+  .slider-arrow-prew,
+  .slider-arrow-next {
+    &.swiper-button-disabled {
+      &::before {
+        background: #3a3737;
+        width: 40px;
+      }
+      &::after {
+        border-color: #3a3737;
+      }
+    }
+  }
+  .swiper {
+    position: static;
+  }
+  .swiper-wrapper {
+    position: static;
+  }
+  .swiper-pagination {
+    max-width: 252px;
+    width: 100%;
+    bottom: 101px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: start;
+  }
+  .swiper-pagination-bullet {
+    width: 34px;
+    height: 6px;
+    border-radius: 0;
+  }
+  .swiper-pagination-bullet-active {
+    background: linear-gradient(92.81deg, #ff1717 6.3%, #ff8988 97.86%);
+  }
+}
+.reviews-card {
+  box-sizing: border-box;
+  max-width: 730px;
+  width: 100%;
+  padding: 61px 118px 51px;
+  background: white;
+  box-shadow: 0px 26px 49px rgba(0, 0, 0, 0.4);
+  border-radius: 12px;
+
+  // .reviews-card__img-box
+  &__img-box {
+    max-width: 107px;
+    margin: 0 auto;
+  }
+  // .reviews-card__image
+  &__image {
+  }
+  // .reviews-card__title
+  &__title {
+    position: relative;
+    margin-bottom: 33px;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 26px;
+    color: #2c2c2c;
+    text-align: center;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: -50px;
+      left: 0;
+      width: 92px;
+      height: 71px;
+      background-image: url('../../images/icons/quotes.png');
+      object-fit: contain;
+    }
+  }
+  // .reviews-card__text
+  &__text {
+    height: 115px;
+    margin-bottom: 33px;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 30px;
+    text-align: center;
+    color: rgba(44, 44, 44, 0.5);
+    text-align: center;
+  }
+}
+
+.section {
+}
+
+.subtitle {
+}
+.slider-controler {
+}
+.slider-arrow-prew {
+}
+.arrow {
+}
+.slider-arrow-next {
+}

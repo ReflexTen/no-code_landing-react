@@ -50,7 +50,7 @@ const Home = () => {
 
           <Fade right {...properties} distance={'300px'} duration={2000}>
             <div className="home__button-box">
-              <a className="home__button" href="#">
+              <a className="home__button" href="#contact">
                 <div className="home__button-text">
                   <p ref={homeButtonText}>- Оценить проект - Оценить проект</p>
                 </div>

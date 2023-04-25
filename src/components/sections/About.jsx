@@ -1,6 +1,6 @@
 const About = () => {
   return (
-    <section className="about section">
+    <section className="about section" id="about">
       <div className="container">
         <h2 className="about__subtitle subtitle">
           Почему вам стоит выбрать нас?

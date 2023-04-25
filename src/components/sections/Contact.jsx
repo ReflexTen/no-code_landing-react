@@ -40,7 +40,7 @@ const Contact = () => {
   }
 
   return (
-    <section className="contact section">
+    <section className="contact section" id="contact">
       <div className="container">
         <h2 className="contact__subtitle subtitle">
           Хочешь узнать стоимость и срок разработки твоего приложения?

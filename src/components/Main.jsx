@@ -7,6 +7,7 @@ import Home from './sections/Home'
 import Portfolio from './sections/Portfolio'
 import Team from './sections/Team'
 import Reviews from './sections/Reviews'
+import Questions from './sections/Questions'
 
 const Main = () => {
   const contentButtonText = useRef()
@@ -30,6 +31,7 @@ const Main = () => {
       <Team />
       <Reviews />
       <Contact />
+      <Questions />
     </main>
   )
 }
