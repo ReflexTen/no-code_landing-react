@@ -51,7 +51,7 @@ const Portfolio = ({ contentButtonText }) => {
   }
 
   return (
-    <section className="portfolio section">
+    <section className="portfolio section" id="portfolio">
       <div className="container">
         <h2 className="portfolio__subtitle subtitle">Портфолио</h2>
 

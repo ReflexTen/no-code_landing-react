@@ -2,7 +2,7 @@ import teamImage from './../../images/expertise/expertise-image.png'
 
 const Expertise = () => {
   return (
-    <section className="expertise section">
+    <section className="expertise section" id="expertise">
       <div className="expertise__img-wrapper">
         <img
           className="expertise__img"

@@ -48,6 +48,47 @@ body {
   padding: 72px 0;
 }
 
+.menu {
+  padding: 40px 0 22px;
+
+  // .menu__box
+  &__box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  // .menu__logo
+  &__logo {
+  }
+  // .menu__nav
+  &__nav {
+  }
+  // .menu__list
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    line-height: 1.25;
+    color: #a7a6ad;
+    flex-wrap: wrap;
+  }
+  // .menu__item
+  &__item {
+    &:not(:last-child) {
+      margin-right: 47px;
+    }
+  }
+
+  // .menu__item-link
+  &__item-link {
+    transition: all 0.3s;
+
+    &:hover {
+      color: #ff1717;
+    }
+  }
+}
+
 .subtitle {
   font-family: Poppins, sans-serif;
   font-weight: 600;
