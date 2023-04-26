@@ -2,13 +2,7 @@ import React from 'react'
 import arrowRightQuestions from './../../images/icons/arrow-right-questions.png'
 import { useRef } from 'react'
 
-const QuestionBox = ({
-  title,
-  text,
-  idx,
-  activeQuestion,
-  setActiveQuestion,
-}) => {
+const QuestionBox = ({ title, text }) => {
   const questionsParent = useRef()
   const buttonRef = useRef()
 

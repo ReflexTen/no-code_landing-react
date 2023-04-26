@@ -1,4 +1,5 @@
 import logo from './../images/logo/logo.png'
+import Button from './UI/Button'
 
 const Menu = () => {
   return (
@@ -50,11 +51,7 @@ const Menu = () => {
             </ul>
           </nav>
 
-          <div className="header__request-button request-button">
-            <a className="request-button__link" href="#contact">
-              Оставить заявку
-            </a>
-          </div>
+          <Button text={'Оставить заявку'} />
         </div>
       </div>
     </div>

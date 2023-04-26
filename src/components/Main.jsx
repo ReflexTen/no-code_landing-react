@@ -10,23 +10,11 @@ import Reviews from './sections/Reviews'
 import Questions from './sections/Questions'
 
 const Main = () => {
-  const contentButtonText = useRef()
-  setTimeout(() => {
-    const contentButtonTextValue = contentButtonText.current
-    contentButtonTextValue.innerHTML = contentButtonTextValue.innerText
-      .split('')
-      .map(
-        (letter, i) =>
-          `<span style="transform:rotate(${i * 10}deg")>${letter}</span>`
-      )
-      .join('')
-  }, 1)
-
   return (
     <main className="main">
       <Home />
       <Expertise />
-      <Portfolio contentButtonText={contentButtonText} />
+      <Portfolio />
       <About />
       <Team />
       <Reviews />
