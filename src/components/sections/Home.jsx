@@ -1,11 +1,12 @@
-import { useRef } from 'react'
+import { useRef, useLayoutEffect } from 'react'
 import peopleImage from '../../images/home/people.png'
 
 import Fade from 'react-reveal/Fade'
 
 const Home = () => {
   const homeButtonText = useRef()
-  setTimeout(() => {
+
+  useLayoutEffect(() => {
     const homeButtonTextValue = homeButtonText.current
     homeButtonTextValue.innerHTML = homeButtonTextValue.innerText
       .split('')
@@ -14,7 +15,7 @@ const Home = () => {
           `<span style="transform:rotate(${i * 10.5}deg")>${letter}</span>`
       )
       .join('')
-  }, 1)
+  }, [])
 
   const properties = {
     duration: 2000,

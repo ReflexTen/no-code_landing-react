@@ -1,10 +1,10 @@
-import { useRef } from 'react'
+import { useRef, useLayoutEffect } from 'react'
 import telegramIcon from './../../images/icons/telegram.png'
 
 const TeamCard = () => {
   const teamCartImgText = useRef()
 
-  setTimeout(() => {
+  useLayoutEffect(() => {
     const teamCartImgTextValue = teamCartImgText.current
     teamCartImgTextValue.innerHTML = teamCartImgTextValue.innerText
       .split('')
@@ -13,7 +13,7 @@ const TeamCard = () => {
           `<span style="transform:rotate(${i * 11}deg")>${letter}</span>`
       )
       .join('')
-  }, 1)
+  }, [])
 
   return (
     <div className="team-card">

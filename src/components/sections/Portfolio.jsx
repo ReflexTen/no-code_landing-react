@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useLayoutEffect, useEffect, useRef } from 'react'
 import works from '../../components/helpers/Works.js'
 
 const navigation = [
@@ -9,7 +9,7 @@ const navigation = [
   { name: 'Разработка' },
 ]
 
-const Portfolio = ({ contentButtonText }) => {
+const Portfolio = () => {
   const [categories, setCatecategories] = useState(0)
   const [sorting, setSorting] = useState('Все работы')
   const [collection, setCollection] = useState([])
@@ -17,6 +17,19 @@ const Portfolio = ({ contentButtonText }) => {
   const contentList = useRef()
   const circleButton = useRef()
   const shadowWrap = useRef()
+
+  const contentButtonText = useRef()
+
+  useLayoutEffect(() => {
+    const contentButtonTextValue = contentButtonText.current
+    contentButtonTextValue.innerHTML = contentButtonTextValue.innerText
+      .split('')
+      .map(
+        (letter, i) =>
+          `<span style="transform:rotate(${i * 10}deg")>${letter}</span>`
+      )
+      .join('')
+  }, [])
 
   useEffect(() => {
     if (sorting === 'Все работы') {

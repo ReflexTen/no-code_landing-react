@@ -1,4 +1,5 @@
-import { useState, useRef } from 'react'
+import { useState, useRef, useLayoutEffect } from 'react'
+import Button from '../UI/Button'
 
 const services = [
   'Бесплатный брифинг - 1',
@@ -15,9 +16,7 @@ const Contact = () => {
   )
   const [isActive, setIsActive] = useState(false)
 
-  setTimeout(() => {
-    // console.log(dropDown.current.children[0])
-
+  useLayoutEffect(() => {
     const contactImgTextValue = contactImgText.current
     contactImgTextValue.innerHTML = contactImgTextValue.innerText
       .split('')
@@ -26,7 +25,7 @@ const Contact = () => {
           `<span style="transform:rotate(${i * 11}deg")>${letter}</span>`
       )
       .join('')
-  }, 1)
+  }, [])
 
   function activeList() {
     dropDown.current.children[0].classList.toggle('interesting__button--active')
@@ -107,11 +106,7 @@ const Contact = () => {
                 Я согласен(а) на обработку моих персональных данных
               </label>
 
-              <div className="form__request-button request-button">
-                <button type="submit" className="request-button__link">
-                  Оставить заявку
-                </button>
-              </div>
+              <Button text={'Оставить заявку'} />
             </form>
 
             <div className="contact__form-shadow-circle shadow-circle"></div>
@@ -129,11 +124,7 @@ const Contact = () => {
               <p className="card__title">Мария</p>
               <p className="card__text">Co-Founder, CEO, продакт-менеджер</p>
 
-              <div className="card__request-button request-button">
-                <a className="request-button__link" href="#">
-                  Telegram
-                </a>
-              </div>
+              <Button text={'Telegram'} />
             </div>
 
             <div className="contact__card-shadow-circle shadow-circle"></div>
