@@ -1,6 +1,5 @@
 import { useRef, useLayoutEffect } from 'react'
 import peopleImage from '../../images/home/people.png'
-
 import Fade from 'react-reveal/Fade'
 
 const Home = () => {
@@ -26,7 +25,7 @@ const Home = () => {
   return (
     <section className="home section">
       <div className="container">
-        <Fade left {...properties}>
+        <Fade top {...properties}>
           <h1 className="home__title">
             Разработка <span className="home__title-text">мобильных</span>{' '}
             <br />
@@ -37,17 +36,20 @@ const Home = () => {
         </Fade>
 
         <div className="home__box">
-          <ul className="home__list">
-            <li className="home__list-item">
-              Экономим бюджет наших клиентов в 3-5 раз на low-code технологиях.
-            </li>
-            <li className="home__list-item">
-              Реализуем проекты любой сложности.
-            </li>
-            <li className="home__list-item">
-              Поддерживаем наших клиентов после запуска проекта
-            </li>
-          </ul>
+          <Fade left {...properties}>
+            <ul className="home__list">
+              <li className="home__list-item">
+                Экономим бюджет наших клиентов в 3-5 раз на low-code
+                технологиях.
+              </li>
+              <li className="home__list-item">
+                Реализуем проекты любой сложности.
+              </li>
+              <li className="home__list-item">
+                Поддерживаем наших клиентов после запуска проекта
+              </li>
+            </ul>
+          </Fade>
 
           <Fade right {...properties} distance={'300px'} duration={2000}>
             <div className="home__button-box">

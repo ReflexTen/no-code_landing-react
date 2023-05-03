@@ -15,9 +15,9 @@ const Reviews = () => {
         <h2 className="reviews__subtitle subtitle">Клиенты и отзывы</h2>
         <div className="reviews__swiper-container">
           <Swiper
-            slidesPerView={1}
+            slidesPerView={2}
             speed={500}
-            // spaceBetween={50}
+            spaceBetween={30}
             navigation={{
               nextEl: '.slider-arrow-next',
               prevEl: '.slider-arrow-prew',

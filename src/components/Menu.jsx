@@ -1,6 +1,16 @@
 import logo from './../images/logo/logo.png'
 import Button from './UI/Button'
 
+const menuList = [
+  { text: 'Наша экспертиза', link: '#expertise' },
+  { text: 'Проекты', link: '#portfolio' },
+  { text: 'О нас', link: '#about' },
+  { text: 'Команда', link: '#team' },
+  { text: 'Отзывы', link: '#reviews' },
+  { text: 'Сколько стоит?', link: '#contact' },
+  { text: 'FAQ', link: '#questions' },
+]
+
 const Menu = () => {
   return (
     <div className="menu">
@@ -13,41 +23,15 @@ const Menu = () => {
           </div>
           <nav className="menu__nav">
             <ul className="menu__list">
-              <li className="menu__item">
-                <a className="menu__item-link" href="#expertise">
-                  Наша экспертиза
-                </a>
-              </li>
-              <li className="menu__item">
-                <a className="menu__item-link" href="#portfolio">
-                  Проекты
-                </a>
-              </li>
-              <li className="menu__item">
-                <a className="menu__item-link" href="#about">
-                  О нас
-                </a>
-              </li>
-              <li className="menu__item">
-                <a className="menu__item-link" href="#team">
-                  Команда
-                </a>
-              </li>
-              <li className="menu__item">
-                <a className="menu__item-link" href="#reviews">
-                  Отзывы
-                </a>
-              </li>
-              <li className="menu__item">
-                <a className="menu__item-link" href="#contact">
-                  Сколько стоит?
-                </a>
-              </li>
-              <li className="menu__item">
-                <a className="menu__item-link" href="#questions">
-                  FAQ
-                </a>
-              </li>
+              {menuList.map((item, idx) => {
+                return (
+                  <li key={idx} className="menu__item">
+                    <a className="menu__item-link" href={item.link}>
+                      {item.text}
+                    </a>
+                  </li>
+                )
+              })}
             </ul>
           </nav>
 
