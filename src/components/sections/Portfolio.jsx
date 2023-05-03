@@ -1,4 +1,5 @@
 import { useState, useLayoutEffect, useEffect, useRef } from 'react'
+import Fade from 'react-reveal/Fade'
 import works from '../../components/helpers/Works.js'
 
 const navigation = [
@@ -17,7 +18,6 @@ const Portfolio = () => {
   const contentList = useRef()
   const circleButton = useRef()
   const shadowWrap = useRef()
-
   const contentButtonText = useRef()
 
   useLayoutEffect(() => {
@@ -63,10 +63,18 @@ const Portfolio = () => {
     contentListValue.style.maxHeight = ``
   }
 
+  const properties = {
+    duration: 1000,
+    distance: '80px',
+    delay: 400,
+  }
+
   return (
     <section className="portfolio section" id="portfolio">
       <div className="container">
-        <h2 className="portfolio__subtitle subtitle">Портфолио</h2>
+        <Fade top {...properties}>
+          <h2 className="portfolio__subtitle subtitle">Портфолио</h2>
+        </Fade>
 
         <ul className="portfolio__tags">
           {navigation.map((item, idx) => {

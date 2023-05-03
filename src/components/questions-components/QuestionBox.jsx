@@ -1,32 +1,31 @@
-import React from 'react'
-import arrowRightQuestions from './../../images/icons/arrow-right-questions.png'
 import { useRef } from 'react'
+import arrowRightQuestions from './../../images/icons/arrow-right-questions.png'
 
-const QuestionBox = ({ title, text }) => {
+const QuestionBox = ({
+  title,
+  text,
+  idx,
+  questionNum,
+  setQuestionNumHandeler,
+  heightText,
+}) => {
   const questionsParent = useRef()
-  const buttonRef = useRef()
 
-  const showAnswer = () => {
+  const callHeight = () => {
     const questionsParentValue = questionsParent.current
-    // console.log(questionsParentValue.children[0].children[1])
-
-    if (questionsParentValue.dataset.open !== 'true') {
-      questionsParentValue.dataset.open = 'true'
-      questionsParentValue.children[1].style.maxHeight = `${questionsParentValue.children[1].scrollHeight}px`
-
-      buttonRef.current.classList.add('question__button--active')
-    } else {
-      questionsParentValue.dataset.open = 'false'
-      questionsParentValue.children[1].style.maxHeight = ``
-      buttonRef.current.classList.remove('question__button--active')
-    }
+    const heightTextValue = questionsParentValue.children[1].scrollHeight
+    setQuestionNumHandeler(idx, heightTextValue)
   }
 
   return (
-    <li ref={questionsParent} className="question" data-open="false">
-      <div onClick={showAnswer} className="question__header">
+    <li ref={questionsParent} className="question">
+      <div onClick={callHeight} className="question__header">
         <h3 className="question__title">{title}</h3>
-        <button ref={buttonRef} className="question__button">
+        <button
+          className={`question__button ${
+            questionNum === idx ? 'question__button--active' : ''
+          }`}
+        >
           <img
             className="question__button-img"
             src={arrowRightQuestions}
@@ -35,15 +34,13 @@ const QuestionBox = ({ title, text }) => {
         </button>
       </div>
 
-      <div className="question__text" data-open="false">
+      <div
+        style={{ maxHeight: `${questionNum === idx ? heightText : 0}px` }}
+        className="question__text"
+        data-open="false"
+      >
         {text}
       </div>
-
-      {/* {activeQuestion === idx && (
-        <div className="question__text" data-open="false">
-          {text}
-        </div>
-      )} */}
     </li>
   )
 }
