@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import QuestionBox from '../questions-components/QuestionBox'
-import questionsDate from '../../components/helpers/QuestionsDate.js'
+import questionsData from '../../components/helpers/QuestionsData.js'
 
 const Questions = () => {
   const [questionNum, setQuestionNum] = useState('')
@@ -21,7 +21,7 @@ const Questions = () => {
       <div className="container">
         <h2 className="questions__subtitle subtitle">FAQ</h2>
         <ul className="questions__list">
-          {questionsDate.map(question => {
+          {questionsData.map(question => {
             return (
               <QuestionBox
                 key={question.idx}

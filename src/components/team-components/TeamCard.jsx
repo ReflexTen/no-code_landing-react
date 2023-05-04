@@ -1,7 +1,7 @@
 import { useRef, useLayoutEffect } from 'react'
 import telegramIcon from './../../images/icons/telegram.png'
 
-const TeamCard = () => {
+const TeamCard = ({ img, name, proffession, about }) => {
   const teamCartImgText = useRef()
 
   useLayoutEffect(() => {
@@ -18,17 +18,16 @@ const TeamCard = () => {
   return (
     <div className="team-card">
       <div className="team-card__circle">
-        <div className="team-card__circle-img-box"></div>
+        <div className="team-card__circle-img-box">
+          <img src={img} alt="" />
+        </div>
         <div className="team-card__circle-text">
           <p ref={teamCartImgText}>No-code No-code No-code No-code</p>
         </div>
       </div>
-      <h4 className="team-card__title">Мария</h4>
-      <h5 className="team-card__subtitle">Co-Founder, CEO, продакт-менеджер</h5>
-      <div className="team-card__text">
-        Защищает интересы клиентов и переводит язык программистов на язык
-        бизнеса
-      </div>
+      <h4 className="team-card__title">{name}</h4>
+      <h5 className="team-card__subtitle">{proffession}</h5>
+      <div className="team-card__text">{about}</div>
       <a className="team-card__link" href="#">
         <img className="team-card__link-icon" src={telegramIcon} alt="" />
       </a>

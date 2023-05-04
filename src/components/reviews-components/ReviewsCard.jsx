@@ -1,18 +1,12 @@
-import React from 'react'
-import client from './../../images/reviews/client-1.jpg'
-
-const ReviewsCard = () => {
+const ReviewsCard = ({ img, name, review }) => {
   return (
     <div>
       <div className="reviews-card">
         <div className="reviews-card__img-box">
-          <img className="reviews-card__image" src={client} alt="" />
+          <img className="reviews-card__image" src={img} alt="" />
         </div>
-        <h4 className="reviews-card__title">Rowhan Marlin</h4>
-        <p className="reviews-card__text">
-          Learning is a Global training provider based across the UK that
-          specialises in accrediated and bespoke training courses.
-        </p>
+        <h4 className="reviews-card__title">{name}</h4>
+        <p className="reviews-card__text">{review}</p>
       </div>
     </div>
   )
