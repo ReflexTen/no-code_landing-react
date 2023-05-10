@@ -14,8 +14,9 @@
       content: '';
       position: absolute;
       background-image: url('../../images/icons/arrow-right.png');
-      left: 151.19px;
-      top: 11.61px;
+      right: 30.19px;
+      top: 50%;
+      transform: translateY(-50%);
       width: 29px;
       height: 29px;
       object-fit: contain;
@@ -24,8 +25,9 @@
     &::after {
       content: '';
       position: absolute;
-      left: 161.11px;
-      top: 6.65px;
+      right: 12.11px;
+      top: 50%;
+      transform: translateY(-50%);
       width: 40px;
       height: 40px;
       background: #ffffff;
