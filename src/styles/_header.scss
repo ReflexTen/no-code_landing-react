@@ -1,7 +1,12 @@
 .header {
+  z-index: 999;
   // padding: 40px 0 22px;
 
   & .container {
     max-width: 1307px;
+
+    // @include media-2 {
+    //   padding: 0;
+    // }
   }
 }

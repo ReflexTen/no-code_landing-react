@@ -10,6 +10,10 @@
 
   &.section {
     min-height: calc(100vh - 132px);
+
+    @include media-2 {
+      min-height: 100%;
+    }
   }
 
   // &::after {
@@ -44,6 +48,22 @@
     font-size: 96px;
     line-height: 1.16;
     margin-bottom: 25px;
+
+    @include media-1 {
+      font-size: 70px;
+    }
+
+    @include media-2 {
+      font-size: 52px;
+    }
+
+    @include media-3 {
+      font-size: 36px;
+    }
+
+    @include media-4 {
+      font-size: 25px;
+    }
   }
   // .home__title-text
   &__title-text {
@@ -60,6 +80,23 @@
     width: 166px;
     height: 81px;
 
+    @include media-1 {
+      height: 60px;
+    }
+
+    @include media-2 {
+      width: 100px;
+    }
+
+    @include media-3 {
+      height: 43px;
+    }
+
+    @include media-4 {
+      width: 55px;
+      height: 28px;
+    }
+
     &::before {
       content: '';
       position: absolute;
@@ -69,17 +106,51 @@
       height: 81px;
       border: 2px solid #ffffff;
       border-radius: 48px;
+
+      @include media-1 {
+        left: -7px;
+
+        height: 60px;
+      }
+
+      @include media-2 {
+        left: -80px;
+      }
+
+      @include media-3 {
+        top: 8px;
+
+        height: 43px;
+      }
+
+      @include media-4 {
+        left: -122px;
+        height: 28px;
+      }
     }
   }
   // .home__box
   &__box {
     display: flex;
+
+    @include media-2 {
+      flex-direction: column;
+    }
   }
   // .home__list
   &__list {
     font-weight: 500;
     font-size: 24px;
     line-height: 1.095;
+
+    @include media-2 {
+      margin-bottom: 32px;
+      font-size: 18px;
+    }
+
+    @include media-4 {
+      font-size: 14px;
+    }
   }
   // .home__list-item
   &__list-item {
@@ -94,16 +165,29 @@
       content: '';
       display: block;
       margin-right: 17px;
-      width: 19px;
+      min-width: 19px;
       height: 19px;
       border: 1px solid #ffffff;
       border-radius: 50%;
+
+      @include media-4 {
+        margin-right: 7px;
+
+        min-width: 12px;
+        height: 12px;
+      }
     }
   }
 
   &__button-box {
     position: relative;
     padding-left: 100px;
+
+    @include media-2 {
+      align-self: center;
+      padding-left: 0;
+    }
+
     &::before {
       content: '';
       position: absolute;
@@ -113,6 +197,16 @@
       height: 81px;
       border: 2px solid #ffffff;
       border-radius: 48px;
+
+      @include media-2 {
+        left: 30px;
+        top: 20px;
+        width: 1378px;
+      }
+
+      @include media-4 {
+        height: 47px;
+      }
     }
   }
   // .home__button
@@ -124,15 +218,32 @@
     border-radius: 50%;
     background: #ffffff;
 
+    @include media-2 {
+      width: 120px;
+      height: 120px;
+    }
+
+    @include media-4 {
+      width: 83px;
+      height: 83px;
+    }
+
     &::before {
       content: '';
       background-image: url('../../images/icons/arrow-down.png');
+      background-size: cover;
       position: absolute;
       transform: translateX(-50%);
       left: 50%;
       top: 29.91px;
       width: 60px;
       height: 60px;
+
+      @include media-4 {
+        top: 13px;
+        width: 37px;
+        height: 32px;
+      }
     }
 
     &::after {
@@ -147,6 +258,11 @@
       mix-blend-mode: normal;
       opacity: 0.26;
       border-radius: 50%;
+
+      @include media-4 {
+        width: 38px;
+        height: 38px;
+      }
     }
   }
   // .home__button-text
@@ -160,10 +276,25 @@
     color: #000000;
     animation: animate 25s linear infinite;
 
+    @include media-2 {
+      font-size: 12px;
+    }
+    @include media-4 {
+      font-size: 10px;
+    }
+
     p span {
       position: absolute;
       left: 50%;
       transform-origin: 0 77px;
+
+      @include media-2 {
+        transform-origin: 0 60px;
+      }
+
+      @include media-4 {
+        transform-origin: 0 41.5px;
+      }
     }
   }
 }

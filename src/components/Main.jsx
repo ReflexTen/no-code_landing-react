@@ -13,13 +13,13 @@ const Main = () => {
   return (
     <main className="main">
       <Home />
-      <Expertise />
-      <Portfolio />
-      <About />
-      <Team />
-      <Reviews />
-      <Contact />
-      <Questions />
+      {/* <Expertise /> */}
+      {/* <Portfolio /> */}
+      {/* <About /> */}
+      {/* <Team /> */}
+      {/* <Reviews /> */}
+      {/* <Contact /> */}
+      {/* <Questions /> */}
     </main>
   )
 }
