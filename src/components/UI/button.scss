@@ -9,17 +9,38 @@
     border-radius: 9px;
     font-weight: 500;
     color: white;
+    box-shadow: 0 3px 10px inherit;
+    transition: all 0.3s;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 3px 10px black;
+      // color: #ff1717;
+
+      &::before {
+        right: 28px;
+      }
+    }
+
+    &:active {
+      transform: translateY(0);
+      box-shadow: none;
+
+      &::before {
+        right: 36px;
+      }
+    }
 
     &::before {
       content: '';
       position: absolute;
       background-image: url('../../images/icons/arrow-right.png');
-      right: 30.19px;
+      right: 36px;
       top: 50%;
       transform: translateY(-50%);
       width: 29px;
       height: 29px;
-      object-fit: contain;
+      transition: all 0.3s;
     }
 
     &::after {

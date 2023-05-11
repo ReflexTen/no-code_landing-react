@@ -2,6 +2,12 @@ import { useState, useLayoutEffect, useEffect, useRef } from 'react'
 import Fade from 'react-reveal/Fade'
 import works from '../../components/helpers/Works.js'
 
+import { Swiper, SwiperSlide } from 'swiper/react'
+import 'swiper/css'
+import 'swiper/css/free-mode'
+
+import { FreeMode, Mousewheel } from 'swiper'
+
 const navigation = [
   { name: 'Все работы' },
   { name: 'UX/UI дизайн' },
@@ -77,23 +83,36 @@ const Portfolio = () => {
         </Fade>
 
         <ul className="portfolio__tags">
-          {navigation.map((item, idx) => {
-            return (
-              <li
-                key={idx}
-                onClick={() => {
-                  setSorting(item.name)
-                  setCatecategories(idx)
-                  hideList()
-                }}
-                className={`portfolio__tag ${
-                  categories === idx ? 'active' : ''
-                }`}
-              >
-                {item.name}
-              </li>
-            )
-          })}
+          <Swiper
+            direction={'horisontal'}
+            slidesPerView={'auto'}
+            freeMode={true}
+            mousewheel={true}
+            // slidesPerView={4}
+            // speed={500}
+            // spaceBetween={10}
+            modules={[FreeMode, Mousewheel]}
+          >
+            <SwiperSlide>
+              {navigation.map((item, idx) => {
+                return (
+                  <li
+                    key={idx}
+                    onClick={() => {
+                      setSorting(item.name)
+                      setCatecategories(idx)
+                      hideList()
+                    }}
+                    className={`portfolio__tag ${
+                      categories === idx ? 'active' : ''
+                    }`}
+                  >
+                    {item.name}
+                  </li>
+                )
+              })}
+            </SwiperSlide>
+          </Swiper>
         </ul>
 
         <div className="portfolio__content content">

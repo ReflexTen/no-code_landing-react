@@ -4,17 +4,29 @@
   // .expertise__subtitle
   &__subtitle {
     margin-bottom: 28px;
+
+    @include media-3 {
+      margin-bottom: 15px;
+    }
   }
   // .expertise__box
   &__box {
     display: flex;
-    justify-content: end;
+    // justify-content: end;
+    justify-content: space-between;
+    align-items: center;
+
+    @include media-3 {
+      flex-direction: column;
+    }
   }
   // .expertise__img-wrapper
   &__img-wrapper {
-    position: absolute;
-    top: 190px;
-    left: 14px;
+    // transform: translateX(-70px);
+    // position: absolute;
+    // top: 190px;
+    // left: 14px;
+    // background-size: cover;
   }
   // .expertise__img
   &__img {
@@ -30,6 +42,11 @@
     // padding-right: 50px;
     padding-left: 92px;
     border-bottom: 1px solid #23213d;
+
+    @include media-1 {
+      max-width: 470px;
+      padding-left: 0;
+    }
 
     &:not(:last-child) {
       margin-bottom: 25px;
@@ -80,15 +97,33 @@
     line-height: 1.095;
     color: #23213d;
 
+    @include media-1 {
+      padding-left: 56px;
+      margin-bottom: 17px;
+    }
+
+    @include media-2 {
+      font-size: 16px;
+    }
+
     &::before {
       content: '';
       background-image: url('../../images/expertise/listicon-1.png');
       position: absolute;
-      top: 0;
+      top: 50%;
+      transform: translateY(-50%);
       left: -85px;
       width: 67px;
       height: 68px;
       object-fit: contain;
+      background-size: cover;
+
+      @include media-1 {
+        left: 0;
+
+        width: 44px;
+        height: 45px;
+      }
     }
   }
   // .expertise__item-text
@@ -97,5 +132,9 @@
     font-size: 18px;
     line-height: 1.25;
     color: rgba(35, 33, 61, 0.6);
+
+    @include media-2 {
+      font-size: 14px;
+    }
   }
 }

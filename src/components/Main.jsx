@@ -13,8 +13,8 @@ const Main = () => {
   return (
     <main className="main">
       <Home />
-      {/* <Expertise /> */}
-      {/* <Portfolio /> */}
+      <Expertise />
+      <Portfolio />
       {/* <About /> */}
       {/* <Team /> */}
       {/* <Reviews /> */}

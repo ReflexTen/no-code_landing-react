@@ -3,7 +3,6 @@
   overflow: hidden;
   padding-top: 0;
   padding-bottom: 0;
-
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -16,21 +15,6 @@
     }
   }
 
-  // &::after {
-  //   content: '';
-  //   // position: absolute;
-  //   // bottom: 0;
-  //   // left: 50%;
-  //   // transform: translateX(-50%);
-  //   display: block;
-  //   background-image: url('../images/home/people.png');
-  //   background-size: cover;
-
-  //   object-fit: contain;
-  //   max-width: 1438px;
-  //   width: 100%;
-  //   height: 440px;
-  // }
   & .container {
     max-width: 1307px;
   }
@@ -118,8 +102,7 @@
       }
 
       @include media-3 {
-        top: 8px;
-
+        top: 5px;
         height: 43px;
       }
 
@@ -135,6 +118,8 @@
 
     @include media-2 {
       flex-direction: column;
+      justify-content: space-between;
+      margin-bottom: 60px;
     }
   }
   // .home__list
@@ -144,7 +129,7 @@
     line-height: 1.095;
 
     @include media-2 {
-      margin-bottom: 32px;
+      margin-bottom: 72px;
       font-size: 18px;
     }
 
@@ -182,6 +167,8 @@
   &__button-box {
     position: relative;
     padding-left: 100px;
+
+    align-self: center;
 
     @include media-2 {
       align-self: center;
