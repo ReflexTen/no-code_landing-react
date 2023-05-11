@@ -11,15 +11,7 @@ const Expertise = () => {
 
   return (
     <section className="expertise section" id="expertise">
-      <Fade left {...properties}>
-        <div className="expertise__img-wrapper">
-          <img
-            className="expertise__img"
-            src={teamImage}
-            alt="изображение команды в работе"
-          />
-        </div>
-      </Fade>
+      <Fade left {...properties}></Fade>
 
       <div className="container">
         <Fade top {...properties}>
@@ -27,6 +19,14 @@ const Expertise = () => {
         </Fade>
         <Fade right {...properties}>
           <div className="expertise__box">
+            <div className="expertise__img-wrapper">
+              <img
+                className="expertise__img"
+                src={teamImage}
+                alt="изображение команды в работе"
+              />
+            </div>
+
             <ul className="expertise__list">
               {expertiseList.map((item, idx) => {
                 return (

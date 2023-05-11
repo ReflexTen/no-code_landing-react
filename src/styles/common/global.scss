@@ -49,6 +49,13 @@ body {
 .section {
   // min-height: 100vh;
   padding: 72px 0;
+
+  @include media-2 {
+    padding: 50px 0;
+  }
+  @include media-3 {
+    padding: 27px 0;
+  }
 }
 
 .menu {
@@ -230,4 +237,19 @@ body {
   font-size: 64px;
   line-height: 113%;
   color: #23213d;
+
+  @include media-1 {
+    font-size: 56px;
+  }
+  @include media-2 {
+    font-size: 45px;
+  }
+  @include media-3 {
+    text-align: center;
+    font-size: 36px;
+  }
+
+  @include media-4 {
+    font-size: 24px;
+  }
 }
