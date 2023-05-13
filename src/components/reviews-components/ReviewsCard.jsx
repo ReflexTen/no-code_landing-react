@@ -6,7 +6,7 @@ const ReviewsCard = ({ img, name, review }) => {
           <img className="reviews-card__image" src={img} alt="" />
         </div>
         <h4 className="reviews-card__title">{name}</h4>
-        <p className="reviews-card__text">{review}</p>
+        <div className="reviews-card__text">{review}</div>
       </div>
     </div>
   )

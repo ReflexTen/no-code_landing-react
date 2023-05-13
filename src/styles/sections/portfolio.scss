@@ -4,12 +4,17 @@
   flex-direction: column;
   justify-content: space-between;
   padding-bottom: 0;
+  overflow: hidden;
   // .portfolio__subtitle
   &__subtitle {
     margin-bottom: 50px;
     font-weight: 600;
     line-height: 1.13;
     color: white;
+
+    @include media-3 {
+      margin-bottom: 28px;
+    }
   }
   // .portfolio__tags
   &__tags {
@@ -17,8 +22,15 @@
     align-items: center;
     margin-bottom: 46px;
 
+    // max-width: 700px;
+
     @include media-3 {
-      overflow-x: auto;
+      margin-bottom: 28px;
+      overflow-x: scroll;
+
+      &::-webkit-scrollbar {
+        width: 0;
+      }
     }
   }
   // .portfolio__tag
@@ -32,15 +44,26 @@
     cursor: pointer;
     transition: all 0.3s;
 
+    min-width: 130px;
+    text-align: center;
+
     @include media-2 {
       font-size: 16px;
     }
     @include media-3 {
       font-size: 14px;
     }
+    @include media-4 {
+      min-width: 117px;
+      font-size: 12px;
+    }
 
     &:not(:last-child) {
       margin-right: 20px;
+
+      @include media-3 {
+        margin-right: 7px;
+      }
     }
 
     &:hover {
@@ -71,12 +94,18 @@
     @include media-2 {
       grid-template-columns: repeat(2, 1fr);
     }
+    @include media-4 {
+      grid-template-columns: repeat(1, 1fr);
+    }
   }
   // .content__item
   &__item {
   }
   // .content__item-img
   &__item-img {
+    @include media-4 {
+      margin: 0 auto;
+    }
   }
 
   &__circle-button {
@@ -93,6 +122,11 @@
     cursor: pointer;
     z-index: 11;
 
+    @include media-3 {
+      width: 100px;
+      height: 100px;
+    }
+
     &::before {
       content: '';
       position: absolute;
@@ -103,6 +137,11 @@
       height: 74px;
       background-color: #fff;
       border-radius: 50%;
+
+      @include media-3 {
+        width: 56px;
+        height: 56px;
+      }
     }
 
     &::after {
@@ -114,6 +153,11 @@
       width: 60px;
       height: 60px;
       transition: all 0.5s;
+      background-size: cover;
+      @include media-3 {
+        width: 50px;
+        height: 50px;
+      }
     }
 
     &--active {
@@ -132,12 +176,19 @@
     font-weight: 300;
     animation: animate 25s linear infinite;
 
+    @include media-3 {
+      font-size: 12px;
+    }
+
     p {
       & span {
         position: absolute;
         left: 50%;
-
         transform-origin: 0 60px;
+
+        @include media-3 {
+          transform-origin: 0 50px;
+        }
       }
     }
   }

@@ -25,7 +25,12 @@ const Reviews = () => {
         <Fade bottom {...properties}>
           <div className="reviews__swiper-container">
             <Swiper
-              slidesPerView={2}
+              breakpoints={{
+                780: {
+                  slidesPerView: 2,
+                },
+              }}
+              slidesPerView={1}
               speed={500}
               spaceBetween={30}
               navigation={{

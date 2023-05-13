@@ -6,7 +6,7 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
 import 'swiper/css/pagination'
 import 'swiper/css/navigation'
-import { Navigation } from 'swiper'
+import { Navigation, Pagination } from 'swiper'
 
 const Team = () => {
   const properties = {
@@ -24,14 +24,26 @@ const Team = () => {
 
         <Fade bottom {...properties}>
           <Swiper
-            slidesPerView={4}
+            breakpoints={{
+              1050: {
+                slidesPerView: 4,
+              },
+              825: {
+                slidesPerView: 3,
+              },
+              576: {
+                slidesPerView: 2,
+              },
+            }}
+            slidesPerView={1}
             speed={500}
             navigation={{
               nextEl: '.slider-arrow-next',
               prevEl: '.slider-arrow-prew',
               clickable: true,
             }}
-            modules={[Navigation]}
+            pagination={{ el: '.swiper-pagination', clickable: true }}
+            modules={[Navigation, Pagination]}
           >
             {membersTeam.map(card => {
               return (
@@ -50,6 +62,7 @@ const Team = () => {
               <div className="slider-arrow-prew arrow"></div>
               <div className="slider-arrow-next arrow"></div>
             </div>
+            <div className="swiper-pagination"></div>
           </Swiper>
         </Fade>
       </div>
