@@ -1,25 +1,36 @@
 .team {
   position: relative;
   overflow: hidden;
-  // & .container {
-  //   overflow: hidden;
-  // }
+
+  &.section {
+    padding-bottom: 70px;
+  }
 
   // .team__subtitle
   &__subtitle {
+    position: relative;
+    display: inline-block;
     color: white;
     margin-bottom: 54px;
+    z-index: 10;
+
+    @include media-3 {
+      width: 100%;
+      margin: 0 auto 43px;
+    }
   }
 
   &__shadow-right,
   &__shadow-left {
     position: absolute;
-
     background-color: #191733;
     height: 1000px;
     width: 1px;
     box-shadow: 0 0px 70px 60px #191733;
-    z-index: 999;
+
+    @include media-1 {
+      display: none;
+    }
   }
 
   &__shadow-right {
@@ -30,11 +41,24 @@
     top: 0;
     left: 0;
   }
+
+  .swiper-pagination {
+    display: none;
+    bottom: -40px;
+
+    @include media-2 {
+      display: block;
+    }
+  }
 }
 
 .team-card {
   max-width: 273px;
   width: 100%;
+
+  @include media-2 {
+    margin: 0 auto;
+  }
 
   &:hover {
     .team-card {
@@ -117,75 +141,12 @@
     display: block;
     margin: 0 auto;
     transition: all 0.3s;
+
+    @include media-2 {
+      opacity: 1;
+    }
   }
   // .team-card__link-icon
   &__link-icon {
-  }
-
-  .swiper {
-    overflow: visible;
-  }
-
-  .slider-controler {
-    position: absolute;
-    top: -85px;
-    left: 1170px;
-  }
-
-  .slider-arrow-prew,
-  .slider-arrow-next {
-    width: 70px;
-    height: 20px;
-    cursor: pointer;
-
-    &::after {
-      content: '';
-      position: absolute;
-      top: 4px;
-      left: 3px;
-      width: 12px;
-      height: 12px;
-      border-top: 2px solid red;
-      border-right: 2px solid red;
-      border-radius: 1px;
-      transform: rotate(-135deg);
-      transition: all 0.3s;
-    }
-
-    &::before {
-      content: '';
-      background: red;
-      position: absolute;
-      top: 9px;
-      left: 3px;
-      width: 60px;
-      height: 2px;
-      object-fit: contain;
-      border-radius: 2px;
-      transition: all 0.3s;
-    }
-
-    &.swiper-button-disabled {
-      &::before {
-        background: white;
-        width: 40px;
-      }
-      &::after {
-        border-color: white;
-      }
-    }
-  }
-
-  .slider-arrow-prew {
-    position: absolute;
-    top: -10px;
-    left: -130px;
-  }
-
-  .slider-arrow-next {
-    position: absolute;
-    top: -10px;
-    right: -2px;
-    transform: rotate(180deg);
   }
 }
