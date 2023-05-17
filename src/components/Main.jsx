@@ -18,7 +18,7 @@ const Main = () => {
       <About />
       <Team />
       <Reviews />
-      {/* <Contact /> */}
+      <Contact />
       {/* <Questions /> */}
     </main>
   )
