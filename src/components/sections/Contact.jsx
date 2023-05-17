@@ -1,6 +1,7 @@
 import { useState, useRef, useLayoutEffect } from 'react'
 import Fade from 'react-reveal/Fade'
 import Button from '../UI/Button'
+import { parsePhoneNumber } from 'libphonenumber-js'
 
 const services = [
   'Бесплатный брифинг - 1',
@@ -15,6 +16,9 @@ const Contact = () => {
   const [selectedService, setSelectedService] = useState(
     'Бесплатный брифинг - 1'
   )
+
+  // const [phoneValue, setPhoneValue] = useState('')
+
   const [isActive, setIsActive] = useState(false)
 
   useLayoutEffect(() => {
@@ -43,12 +47,42 @@ const Contact = () => {
     delay: 400,
   }
 
+  function setPhoneValueHandler(e) {
+    // console.log(e.target.value)
+    // console.log(e.target.value.length)
+    // console.log(Number(e.target.value))
+    // if (e.target.value.length === 1) {
+    //   setPhoneValue(`+7(${e.target.value}`)
+    // } else if (e.target.value.length === 6) {
+    //   setPhoneValue(`${e.target.value})-`)
+    // } else {
+    //   setPhoneValue(e.target.value)
+    // }
+    // setPhoneValue(e.target.value)
+  }
+
+  function normalizePhoneNumber(value) {
+    const phoneNumber = parsePhoneNumber(value, 'RU')
+    if (phoneNumber) {
+      // phoneNumber.number()
+      phoneNumber.isPossible()
+      phoneNumber.isValid()
+      // Note: `.getType()` requires `/max` metadata: see below for an explanation.
+      phoneNumber.getType()
+    }
+    // console.log(phoneNumber.formatInternational())
+    return phoneNumber.formatInternational()
+  }
+
   return (
     <section className="contact section" id="contact">
       <div className="container">
         <Fade top {...properties}>
           <h2 className="contact__subtitle subtitle">
-            Хочешь узнать стоимость и срок разработки твоего приложения?
+            Хочешь узнать{' '}
+            <span className="contact__subtitle--red">стоимость</span> и{' '}
+            <span className="contact__subtitle--red">срок</span> разработки
+            твоего приложения?
           </h2>
         </Fade>
 
@@ -96,9 +130,13 @@ const Contact = () => {
                   />
                   <input
                     className="form__input"
-                    type="number"
+                    type="tel"
                     placeholder="Соцсеть/телефон"
                     required
+                    // value={phoneValue}
+                    onChange={e => {
+                      e.target.value = normalizePhoneNumber(e.target.value)
+                    }}
                   />
                 </div>
                 <textarea
@@ -111,39 +149,40 @@ const Contact = () => {
                   type="checkbox"
                   id="person-data"
                   name="person-data"
+                  required
                 />
                 <label className="form__label-checkbox" htmlFor="person-data">
                   Я согласен(а) на обработку моих персональных данных
                 </label>
 
-                <Button text={'Оставить заявку'} />
+                {/* <Button text={'Оставить заявку'} /> */}
+                <button className="form__button" type="submit">
+                  Оставить заявку
+                </button>
               </form>
-
-              <div className="contact__form-shadow-circle shadow-circle"></div>
             </div>
           </Fade>
 
           <Fade right {...properties}>
-            <div className="contact__card-wrapper">
-              <div className="contact__card card">
-                <div className="card__circle">
-                  <div className="card__circle-img-box"></div>
-                  <div className="card__circle-text">
-                    <p ref={contactImgText}>No-code No-code No-code No-code</p>
-                  </div>
+            <div className="contact__card card">
+              <div className="card__circle">
+                <div className="card__circle-img-box"></div>
+                <div className="card__circle-text">
+                  <p ref={contactImgText}>No-code No-code No-code No-code</p>
                 </div>
-
-                <p className="card__title">Мария</p>
-                <p className="card__text">Co-Founder, CEO, продакт-менеджер</p>
-
-                <Button text={'Telegram'} />
               </div>
 
-              <div className="contact__card-shadow-circle shadow-circle"></div>
+              <p className="card__title">Мария</p>
+              <p className="card__text">Co-Founder, CEO, продакт-менеджер</p>
+
+              <Button text={'Telegram'} />
             </div>
           </Fade>
         </div>
       </div>
+
+      <div className="contact__form-shadow-circle shadow-circle"></div>
+      <div className="contact__card-shadow-circle shadow-circle"></div>
     </section>
   )
 }
