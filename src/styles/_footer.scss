@@ -4,7 +4,29 @@
     padding-top: 44px;
     padding-bottom: 0;
     margin-bottom: 46px;
+
+    @include media-3 {
+      padding-top: 25px;
+      margin-bottom: 23px;
+    }
+
+    &__nav {
+      @include media-2 {
+        display: none;
+      }
+    }
+
+    &__box {
+      justify-content: center;
+    }
   }
+
+  & .menu-icon {
+    @include media-2 {
+      display: none;
+    }
+  }
+
   &__info {
     text-align: center;
     font-family: 'Poppins', sans-serif;

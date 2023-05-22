@@ -1,4 +1,4 @@
-import { useRef } from 'react'
+import { useState } from 'react'
 
 import About from './sections/About'
 import Contact from './sections/Contact'
@@ -10,16 +10,33 @@ import Reviews from './sections/Reviews'
 import Questions from './sections/Questions'
 
 const Main = () => {
+  const [statePortfolioList, setStatePortfolioList] = useState(false)
+  const [heightPortfolioList, setHeightPortfolioList] = useState(0)
+
+  function activePortfolioList(tag, heightList) {
+    if (tag === true) {
+      setStatePortfolioList(false)
+      setHeightPortfolioList(400)
+    } else {
+      setStatePortfolioList(!statePortfolioList)
+      setHeightPortfolioList(heightList)
+    }
+  }
+
   return (
     <main className="main">
       <Home />
       <Expertise />
-      <Portfolio />
+      <Portfolio
+        statePortfolioList={statePortfolioList}
+        heightPortfolioList={heightPortfolioList}
+        activePortfolioList={activePortfolioList}
+      />
       <About />
       <Team />
       <Reviews />
       <Contact />
-      {/* <Questions /> */}
+      <Questions />
     </main>
   )
 }
