@@ -3,7 +3,9 @@
   overflow: hidden;
 
   &.section {
-    padding: 27px 0 0;
+    @include media-4 {
+      padding: 27px 0 0;
+    }
   }
 
   & .container {

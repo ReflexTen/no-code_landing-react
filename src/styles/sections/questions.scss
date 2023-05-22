@@ -1,9 +1,12 @@
 .questions {
   background-color: #fff;
-
   // .questions__subtitle
   &__subtitle {
     margin-bottom: 56px;
+
+    @include media-2 {
+      margin-bottom: 5px;
+    }
   }
 }
 
@@ -17,6 +20,13 @@
     align-items: center;
     padding: 29.5px 10px;
     cursor: pointer;
+
+    @include media-2 {
+      padding: 29.5px 10px 12px;
+    }
+    @include media-3 {
+      padding: 19px 10px 0;
+    }
   }
   // .question__title
   &__title {
@@ -27,6 +37,18 @@
     font-size: 32px;
     line-height: 1.13;
     color: #191733;
+    margin-right: 10px;
+
+    @include media-2 {
+      font-size: 26px;
+    }
+
+    @include media-3 {
+      font-size: 20px;
+    }
+    @include media-4 {
+      font-size: 16px;
+    }
   }
   // .question__button
   &__button {
@@ -35,24 +57,35 @@
     align-items: center;
     justify-content: center;
     min-width: 45px;
-    min-height: 45px;
+    height: 45px;
     background: #191733;
     border-radius: 50%;
-
     z-index: 1;
+
+    @include media-3 {
+      min-width: 10px;
+      max-width: 29px;
+      width: 100%;
+      height: 29px;
+    }
 
     &::before {
       content: '';
       position: absolute;
       top: 0;
       left: 0;
-      min-width: 45px;
-      min-height: 45px;
+      width: 45px;
+      height: 45px;
       border-radius: 50%;
       background: linear-gradient(92.81deg, #ff1717 6.3%, #ff8988 97.86%);
       opacity: 0;
       transition: opacity 0.3s;
       z-index: -1;
+
+      @include media-3 {
+        width: 29px;
+        height: 29px;
+      }
     }
 
     &--active {
@@ -70,22 +103,23 @@
   &__button-img {
     transition: all 0.3s;
   }
-
   // .question__text
   &__text {
     max-height: 0;
     overflow: hidden;
-    padding: 0 100px 0 10px;
+    padding: 10px 100px 0 10px;
     font-size: 18px;
     line-height: 145.5%;
     color: rgba(35, 33, 61, 0.6);
     transition: max-height 0.3s;
-  }
-}
 
-.section {
-}
-.container {
-}
-.subtitle {
+    @include media-3 {
+      padding: 10px 40px 0 10px;
+      font-size: 14px;
+    }
+
+    @include media-4 {
+      padding: 10px 10px 0 10px;
+    }
+  }
 }

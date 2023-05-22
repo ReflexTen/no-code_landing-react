@@ -17,7 +17,7 @@
       box-shadow: 0 3px 10px black;
 
       &::before {
-        right: 28px;
+        animation: floatArrowHorizontal 1.2s ease-in-out infinite;
       }
     }
 
@@ -55,5 +55,17 @@
       opacity: 0.26;
       border-radius: 50%;
     }
+  }
+}
+
+@keyframes floatArrowHorizontal {
+  0% {
+    transform: translateX(0) translateY(-50%);
+  }
+  50% {
+    transform: translateX(-10px) translateY(-50%);
+  }
+  100% {
+    transform: translateX(0) translateY(-50%);
   }
 }

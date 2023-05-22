@@ -4,20 +4,24 @@ import works from '../../components/helpers/Works.js'
 
 const navigation = [
   { name: 'Все работы' },
-  { name: 'UX/UI дизайн' },
-  { name: 'Логотипы' },
+  { name: 'PWA' },
+  { name: 'Веб-сервис' },
+  { name: 'Дизайн' },
   { name: 'Веб-сайты' },
-  { name: 'Разработка' },
+  { name: 'Нативное приложение' },
 ]
 
-const Portfolio = () => {
+const Portfolio = ({
+  heightPortfolioList,
+  activePortfolioList,
+  statePortfolioList,
+}) => {
   const [categories, setCatecategories] = useState(0)
   const [sorting, setSorting] = useState('Все работы')
   const [collection, setCollection] = useState([])
 
   const contentList = useRef()
-  const circleButton = useRef()
-  const shadowWrap = useRef()
+
   const contentButtonText = useRef()
 
   useLayoutEffect(() => {
@@ -29,7 +33,7 @@ const Portfolio = () => {
           `<span style="transform:rotate(${i * 10}deg")>${letter}</span>`
       )
       .join('')
-  }, [])
+  }, [statePortfolioList])
 
   useEffect(() => {
     if (sorting === 'Все работы') {
@@ -39,28 +43,15 @@ const Portfolio = () => {
     }
   }, [sorting])
 
-  const showList = () => {
-    circleButton.current.classList.toggle('content__circle-button--active')
-    shadowWrap.current.classList.toggle('shadow--active')
-
+  const showList = test => {
     const contentListValue = contentList.current
+    const contentListValueHeight = contentListValue.scrollHeight
 
-    if (contentListValue.dataset.open !== 'true') {
-      contentListValue.dataset.open = 'true'
-      contentListValue.style.maxHeight = `${contentListValue.scrollHeight}px`
+    if (test === 'tag') {
+      activePortfolioList(true, contentListValueHeight)
     } else {
-      contentListValue.dataset.open = 'false'
-      contentListValue.style.maxHeight = ``
+      activePortfolioList(false, contentListValueHeight)
     }
-  }
-
-  const hideList = () => {
-    circleButton.current.classList.remove('content__circle-button--active')
-    shadowWrap.current.classList.remove('shadow--active')
-
-    const contentListValue = contentList.current
-    contentListValue.dataset.open = 'false'
-    contentListValue.style.maxHeight = ``
   }
 
   const properties = {
@@ -84,7 +75,7 @@ const Portfolio = () => {
                 onClick={() => {
                   setSorting(item.name)
                   setCatecategories(idx)
-                  hideList()
+                  showList('tag')
                 }}
                 className={`portfolio__tag ${
                   categories === idx ? 'active' : ''
@@ -97,7 +88,13 @@ const Portfolio = () => {
         </ul>
 
         <div className="portfolio__content content">
-          <ul ref={contentList} className="content__list" data-open="false">
+          <ul
+            ref={contentList}
+            className="content__list"
+            style={{
+              maxHeight: `${statePortfolioList ? heightPortfolioList : 400}px`,
+            }}
+          >
             {collection.map((item, idx) => {
               return (
                 <li key={idx} className="content__item">
@@ -112,18 +109,25 @@ const Portfolio = () => {
           </ul>
 
           <div
-            ref={circleButton}
             onClick={showList}
-            className="content__circle-button"
+            className={`content__circle-button ${
+              statePortfolioList ? 'content__circle-button--active' : ''
+            }`}
           >
             <div className="content__circle-text">
-              <p ref={contentButtonText}>- Показать больше - Показать больше</p>
+              <p ref={contentButtonText}>
+                {statePortfolioList
+                  ? '- Скрыть - Скрыть - Скрыть - Скрыть'
+                  : '- Показать больше - Показать больше'}
+              </p>
             </div>
           </div>
         </div>
       </div>
 
-      <div ref={shadowWrap} className="shadow"></div>
+      <div
+        className={`shadow ${statePortfolioList ? 'shadow--active' : ''}`}
+      ></div>
     </section>
   )
 }

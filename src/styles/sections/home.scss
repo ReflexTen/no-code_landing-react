@@ -204,6 +204,13 @@
     height: 154px;
     border-radius: 50%;
     background: #ffffff;
+    transition: all 0.5s;
+
+    &:hover {
+      &::before {
+        animation: floatArrowVertical 1.2s ease-in-out infinite;
+      }
+    }
 
     @include media-2 {
       width: 120px;
@@ -292,5 +299,17 @@
   }
   100% {
     transform: rotate(0deg);
+  }
+}
+
+@keyframes floatArrowVertical {
+  0% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-10px);
+  }
+  100% {
+    transform: translateX(-50%) translateY(0);
   }
 }
