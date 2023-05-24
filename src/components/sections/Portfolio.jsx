@@ -37,7 +37,23 @@ const Portfolio = ({
 
   useEffect(() => {
     if (sorting === 'Все работы') {
-      setCollection([...works])
+      const sortingWorks = []
+
+      for (const work of works) {
+        let presence = false
+
+        for (const item of sortingWorks) {
+          if (work.sourse === item.sourse) {
+            presence = true
+          }
+        }
+
+        if (!presence) {
+          sortingWorks.push(work)
+        }
+      }
+
+      setCollection([...sortingWorks])
     } else {
       setCollection([...works.filter(item => item.tag === sorting)])
     }
