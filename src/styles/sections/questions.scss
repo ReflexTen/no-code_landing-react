@@ -107,7 +107,7 @@
   &__text {
     max-height: 0;
     overflow: hidden;
-    padding: 10px 100px 0 10px;
+    padding: 0 10px;
     font-size: 18px;
     line-height: 145.5%;
     color: rgba(35, 33, 61, 0.6);
@@ -120,6 +120,110 @@
 
     @include media-4 {
       padding: 10px 10px 0 10px;
+    }
+  }
+}
+
+.answer {
+  // .answer__text
+  &__text {
+    margin-bottom: 20px;
+  }
+  // .answer__list
+  &__list {
+    display: flex;
+
+    @include media-3 {
+      flex-direction: column;
+    }
+  }
+  // .answer__item
+  &__item {
+    width: 33.3%;
+    &:nth-child(2) {
+      border-right: 1px solid black;
+      border-left: 1px solid black;
+
+      @include media-3 {
+        border: none;
+      }
+    }
+
+    @include media-3 {
+      width: 100%;
+    }
+  }
+  &__item-wrapper {
+    padding: 10px;
+  }
+  // .answer__title
+  &__title {
+    padding: 10px 0;
+    text-align: center;
+    font-weight: 800;
+    border-bottom: 1px solid black;
+  }
+  // .answer__info
+  &__info {
+    padding-top: 10px;
+    margin-bottom: 10px;
+  }
+  // .answer__benefits
+  &__benefits {
+    margin-bottom: 10px;
+  }
+  // .answer__benefits-title
+  &__benefits-title {
+    font-weight: 800;
+  }
+  // .answer__benefits-item
+  &__benefits-item,
+  &__flaws-item {
+    position: relative;
+    padding-left: 15px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 9px;
+      left: 0;
+      display: block;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background-color: rgba(35, 33, 61, 0.6);
+    }
+  }
+
+  // .answer__flaws-title
+  &__flaws-title {
+    font-weight: 800;
+  }
+}
+
+.answer-five {
+  &__list {
+    padding-left: 20px;
+    margin-bottom: 20px;
+  }
+  &__item {
+    position: relative;
+    padding-left: 15px;
+
+    &:not(:last-child) {
+      margin-bottom: 7px;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 10px;
+      left: 0;
+      display: block;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background-color: rgba(35, 33, 61, 0.6);
     }
   }
 }

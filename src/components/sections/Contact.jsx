@@ -4,18 +4,18 @@ import Button from '../UI/Button'
 import { parsePhoneNumber } from 'libphonenumber-js'
 
 const services = [
-  'Бесплатный брифинг - 1',
-  'Бесплатный брифинг - 2',
-  'Бесплатный брифинг - 3',
-  'Бесплатный брифинг - 4',
+  'Бесплатный брифинг',
+  'Дизайн и прототип',
+  'Веб-сервис',
+  'Сайт',
+  'Продвижение приложения',
+  'Видео продакшн',
 ]
 
 const Contact = () => {
   const contactImgText = useRef()
 
-  const [selectedService, setSelectedService] = useState(
-    'Бесплатный брифинг - 1'
-  )
+  const [selectedService, setSelectedService] = useState('Бесплатный брифинг')
 
   // const [phoneValue, setPhoneValue] = useState('')
 

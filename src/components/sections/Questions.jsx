@@ -2,7 +2,7 @@ import { useState } from 'react'
 import Fade from 'react-reveal/Fade'
 
 import QuestionBox from '../questions-components/QuestionBox'
-import questionsData from '../../components/helpers/QuestionsData.js'
+import questionsData from '../../components/helpers/QuestionsData.jsx'
 
 const Questions = () => {
   const [questionNum, setQuestionNum] = useState('')
