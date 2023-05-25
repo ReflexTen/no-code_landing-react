@@ -1,7 +1,7 @@
 import { useRef, useLayoutEffect } from 'react'
 import telegramIcon from './../../images/icons/telegram.png'
 
-const TeamCard = ({ img, name, proffession, about }) => {
+const TeamCard = ({ img, id, name, proffession, about }) => {
   const teamCartImgText = useRef()
 
   useLayoutEffect(() => {
@@ -18,7 +18,7 @@ const TeamCard = ({ img, name, proffession, about }) => {
   return (
     <div className="team-card">
       <div className="team-card__circle">
-        <div className="team-card__circle-img-box">
+        <div className="team-card__circle-img-box" id={id}>
           <img src={img} alt="" />
         </div>
         <div className="team-card__circle-text">

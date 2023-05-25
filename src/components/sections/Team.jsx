@@ -50,6 +50,7 @@ const Team = () => {
                 <SwiperSlide key={card.idx}>
                   <TeamCard
                     img={card.img}
+                    id={card.id}
                     name={card.name}
                     proffession={card.proffession}
                     about={card.about}

@@ -71,14 +71,24 @@
   box-sizing: border-box;
   max-width: 730px;
   width: 100%;
-  // min-height: 500px;
-  padding: 61px 118px 51px;
+  min-height: 520px;
+  padding: 61px 20px 51px;
   background: white;
   box-shadow: 0px 26px 49px rgba(0, 0, 0, 0.4);
   border-radius: 12px;
 
+  @include media-1 {
+    min-height: 551px;
+  }
+
   @include media-2 {
+    min-height: 640px;
+
     padding: 40px 15px 40px;
+  }
+
+  @include media-3 {
+    min-height: 460px;
   }
 
   // .reviews-card__img-box
@@ -103,7 +113,7 @@
       content: '';
       position: absolute;
       top: -50px;
-      left: -60px;
+      left: 30px;
       width: 92px;
       height: 71px;
       background-image: url('../../images/icons/quotes.png');
