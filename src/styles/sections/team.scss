@@ -66,6 +66,12 @@
         opacity: 1;
       }
 
+      &__circle {
+        &::before {
+          background-color: rgba(255, 0, 0, 0.8);
+        }
+      }
+
       &__circle-text {
         color: red;
       }
@@ -82,14 +88,27 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+    &::before {
+      content: '';
+      position: absolute;
+      display: block;
+      top: 36px;
+      left: 33.8px;
+      width: 189px;
+      height: 189px;
+      background-color: #ffff;
+      border-radius: 50%;
+      transition: all 0.3s;
+    }
   }
   // .team-card__circle-img-box
   &__circle-img-box {
     position: absolute;
-    top: -5px;
+    top: 0;
+
     width: 200px;
     height: 228px;
-    // background-image: url('../../images/contact/card-img.png');
     background-size: cover;
     border-radius: 50%;
     z-index: 100;
@@ -149,4 +168,21 @@
   // .team-card__link-icon
   &__link-icon {
   }
+}
+
+#img-two {
+  top: 12px;
+  left: 48px;
+}
+#img-three {
+  top: 21px;
+  left: 49px;
+}
+#img-four {
+  top: 11.5px;
+  left: 49px;
+}
+#img-five {
+  top: 9.5px;
+  left: 49px;
 }

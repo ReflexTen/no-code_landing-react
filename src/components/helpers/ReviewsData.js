@@ -1,40 +1,36 @@
-import clientOne from './../../images/reviews/client-1.jpg'
+import clientOne from './../../images/reviews/client-1.png'
+import clientTwo from './../../images/reviews/client-2.png'
+import clientThree from './../../images/reviews/client-3.png'
+import clientFour from './../../images/reviews/client-4.png'
 
 const clients = [
   {
     idx: '1',
     img: clientOne,
-    name: 'Rowhan Marlin',
+    name: 'Сухарев Александр',
     review:
-      'Learning is a Global training provider based across the UK that specialises in accrediated and bespoke training courses.',
+      'Я очень доволен работой компании. С самого начала проекта команда проявила профессионализм и пунктуальность. Они внимательно изучили наши требования и потребности, помогли написать ТЗ, а также предложили свои решения и идеи по улучшению приложения. Мы благодарны им за инициативность, ответственность и профессионализм. В результате мы получили продукт, который превзошел наши ожидания.',
   },
   {
     idx: '2',
-    img: clientOne,
-    name: 'Rowhan Marlin',
+    img: clientTwo,
+    name: 'Николаев Иван',
     review:
-      'Learning is a Global training provider based across the UK that specialises in accrediated and bespoke training courses.',
+      'Отличная работа! Мобильное приложение работает быстро и плавно, имеет удобный и интуитивно понятный интерфейс для наших сотрудников и клиентов. Я бы рекомендовал эту компанию всем, кто ищет надежного и профессионального партнера для разработки мобильных приложений.',
   },
   {
     idx: '3',
-    img: clientOne,
-    name: 'Rowhan Marlin',
+    img: clientThree,
+    name: 'Степанов Матвей',
     review:
-      'Learning is a Global training provider based across the UK that specialises in accrediated and bespoke training courses.',
+      'Большое спасибо команде. Мы реализовали сложный проект. Это наш первый опыт разработки мобильных приложений, но с поддержкой команды No-Code Production мы смогли реализовать все свои идеи. Отдельное спасибо дизайнеру Екатерине и Данилу, которые помогли превратить наши фантазии в реальность, знаем, как это было не просто местами.',
   },
   {
     idx: '4',
-    img: clientOne,
-    name: 'Rowhan Marlin',
+    img: clientFour,
+    name: 'Титова Анастасия',
     review:
-      'Learning is a Global training provider based across the UK that specialises in accrediated and bespoke training courses.',
-  },
-  {
-    idx: '5',
-    img: clientOne,
-    name: 'Rowhan Marlin',
-    review:
-      'Learning is a Global training provider based across the UK that specialises in accrediated and bespoke training courses.',
+      'Я очень доволен работой компании. С самого начала проекта команда проявила профессионализм и пунктуальность. Они внимательно изучили наши требования и потребности, помогли написать ТЗ, а также предложили свои решения и идеи по улучшению приложения. Мы благодарны им за инициативность, ответственность и профессионализм. В результате мы получили продукт, который превзошел наши ожидания.',
   },
 ]
 
